@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Serviço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastrar Serviço</h2>
+        <form action="processa_servico.php" method="POST">
+            <label for="nome">Nome do Serviço:</label>
+            <input type="text" name="nome" required>
+
+            <label for="valor">Valor (R$):</label>
+            <input type="number" name="valor" step="0.01" required>
+
+            <label for="duracao">Duração (minutos):</label>
+            <input type="number" name="duracao" required>
+
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+        <a href="dashboard_estabelecimento.php" class="btn-back">Voltar</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Horário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Meu Estabelecimento</h1>
+            <div class="nav-links">
+                <a href="dashboard_horarios.html">Voltar</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Cadastrar Horário de Funcionamento</h2>
+
+        <form action="salvar_horario.php" method="POST" class="form-container">
+            <div class="dias-container">
+                <label><input type="checkbox" name="dias[]" value="Segunda"> Segunda-feira</label>
+                <label><input type="checkbox" name="dias[]" value="Terça"> Terça-feira</label>
+                <label><input type="checkbox" name="dias[]" value="Quarta"> Quarta-feira</label>
+                <label><input type="checkbox" name="dias[]" value="Quinta"> Quinta-feira</label>
+                <label><input type="checkbox" name="dias[]" value="Sexta"> Sexta-feira</label>
+                <label><input type="checkbox" name="dias[]" value="Sábado"> Sábado</label>
+                <label><input type="checkbox" name="dias[]" value="Domingo"> Domingo</label>
+            </div>
+
+            <div class="input-group">
+                <label>Horário de Abertura:</label>
+                <input type="time" name="hora_abertura" required>
+            </div>
+
+            <div class="input-group">
+                <label>Horário de Fechamento:</label>
+                <input type="time" name="hora_fechamento" required>
+            </div>
+
+            <div class="input-group">
+                <label>Intervalo?</label>
+                <input type="checkbox" id="intervalo-toggle">
+            </div>
+
+            <div class="intervalo-container">
+                <div class="input-group">
+                    <label>Início do Intervalo:</label>
+                    <input type="time" name="inicio_intervalo" id="inicio_intervalo" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Fim do Intervalo:</label>
+                    <input type="time" name="fim_intervalo" id="fim_intervalo" disabled>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Salvar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("intervalo-toggle").addEventListener("change", function() {
+            document.getElementById("inicio_intervalo").disabled = !this.checked;
+            document.getElementById("fim_intervalo").disabled = !this.checked;
+        });
+    </script>
+</body>
+</html>
